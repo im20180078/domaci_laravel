@@ -13,4 +13,11 @@ class Exam extends Model
         'name',
         'semester'
     ];
+
+    public function grades()
+    {
+        return $this->hasMany(Grade::class, 'exam_id');
+    }
+
+
 }

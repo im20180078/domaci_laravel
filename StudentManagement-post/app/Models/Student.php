@@ -15,5 +15,9 @@ class Student extends Model
         'index_number'
     ];
 
+    public function grades()
+    {
+        return $this->hasMany(Grade::class, 'student_id');
+    }
 
 }
