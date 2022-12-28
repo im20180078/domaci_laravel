@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
-use iLLuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Validator;
 
 class StudentController extends Controller
 {
@@ -136,7 +136,7 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student_id)
+    public function destroy($student_id)
     {
         $student=Student::find($student_id);
 

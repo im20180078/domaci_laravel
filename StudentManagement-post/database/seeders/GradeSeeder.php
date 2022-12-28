@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Grade;
 use Illuminate\Database\Seeder;
+use Throwable;
 
 class GradeSeeder extends Seeder
 {

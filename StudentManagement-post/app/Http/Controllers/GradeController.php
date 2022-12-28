@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\GradeResource;
+
 use App\Models\Grade;
 use Illuminate\Http\Request;
 
-class GradeConroller extends Controller
+class GradeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -46,7 +48,7 @@ class GradeConroller extends Controller
      * @param  \App\Models\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function show(Grade $id)
+    public function show($id)
     {
         $grade = Grade::find($id);
 
