@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\GradeController;
 use App\Http\Controllers\StudentController;
-
-
+use App\Http\Controllers\StudentExamController;
+use App\Http\Controllers\StudentExamTestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +33,8 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::get('/exams', [ExamController::class, 'index']);
     Route::get('/exams/{id}', [ExamController::class, 'show']);
     
+    Route::get('/student/{id}/exams', [StudentExamController::class, 'index']);
+
     Route::resource('grades', GradeController::class);
 
     Route::post('/logout', [AuthController::class, 'logout']);
