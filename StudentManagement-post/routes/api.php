@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\api\AuthController;
+use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\GradeController;
 use App\Http\Controllers\StudentController;
