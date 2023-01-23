@@ -46,11 +46,11 @@ class ExamController extends Controller
      * @param  \App\Models\Exam  $exam
      * @return \Illuminate\Http\Response
      */
-    public function show(Exam $exam_id)
+    public function show(Exam $id)
     {
-        $exam=Exam::find($exam_id);
+        $exam=Exam::find($id);
 
-        if(is_null($exam)){
+        if(is_null($id)){
             return response()->json("Exam with given id is not found", 404);
         }
         return response()->json($exam, 200);

@@ -68,13 +68,14 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function show($student_id)
+    public function show($id)
     {
-        $student = Student::find($student_id);
+        $student = Student::find($id);
 
-        if(is_null($student)){
+        if(is_null($id)){
             return response()->json("Student with given id is not found", 404);
         }
+      
         return response()->json($student, 200);
     }
 
@@ -96,7 +97,7 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $student_id)
+    public function update(Request $request, $student)
     {
         $validator = Validator::make($request->all(), [
             'first_name' => 'required|string|max:50',
@@ -112,7 +113,7 @@ class StudentController extends Controller
             return response()->json($validator->errors());
         }
 
-        $student=Student::find($student_id);
+        $student=Student::find($student);
 
         if(is_null($student)){
             return response()->json("Student with given id is not found", 404);
@@ -136,9 +137,9 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy($student_id)
+    public function destroy($id)
     {
-        $student=Student::find($student_id);
+        $student=Student::find($id);
 
         if(is_null($student)){
             return response()->json("Student with given id is not found", 404);

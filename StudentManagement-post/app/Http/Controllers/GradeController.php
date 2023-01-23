@@ -48,9 +48,9 @@ class GradeController extends Controller
      * @param  \App\Models\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($grade)
     {
-        $grade = Grade::find($id);
+        $grade = Grade::find($grade);
 
         if(is_null($grade)){
             return response()->json("Grade with given id is not found", 404);
